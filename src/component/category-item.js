@@ -6,12 +6,14 @@ export default class CategoryItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'normal'
+      view: false
     }
   }
   updateView = () => {
-    this.setState({view: 'edit'});
-    return true;
+    this.setState({view: true});
+  }
+  returnView = () => {
+    this.setState({view: false});
   }
   onDestroy = () => {
       this.props.onDestroy(this.props.category);
@@ -32,10 +34,8 @@ export default class CategoryItem extends Component {
               <h3>{this.props.category.budget}</h3>
             </li>
             <button onClick={this.onDestroy}>Delete</button>
-            {this.updateView && <CatCreateForm onComplete={this.catUpdate} category={this.props.category}/>}
+            {this.state.view && <CatCreateForm onComplete={this.catUpdate} category={this.props.category} onClick={this.returnView} buttonText = 'edit'/>}
           </div>
-     
-          
         </Fragment>
       );
       
