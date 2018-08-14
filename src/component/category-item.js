@@ -31,7 +31,7 @@ export default class CategoryItem extends Component {
               <h3>{this.props.category.name}</h3>
             </li>
             <li>
-              <h3>{this.props.category.budget}</h3>
+              <h3>${this.props.category.budget}.00</h3>
             </li>
             <button onClick={this.onDestroy}>Delete</button>
             {this.state.view && <CatCreateForm onComplete={this.catUpdate} category={this.props.category} onClick={this.returnView} buttonText = 'edit'/>}

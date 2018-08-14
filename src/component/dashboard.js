@@ -10,11 +10,11 @@ import {catCreate, catUpdate, catDestroy} from '../action/category-action';
       <Fragment>
         <h1>Dashboard</h1>
         <CatCreateForm onComplete={props.catCreate} buttonText='submit'/>
-        <ol>
+        <ul>
       {props.category.map(category => (
         <CategoryItem category={category} key={category.id} onComplete={props.catUpdate} onDestroy={props.catDestroy}/>
       ))}
-    </ol>
+    </ul>
       </Fragment>
       );
 }
