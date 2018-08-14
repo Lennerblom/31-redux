@@ -2,18 +2,19 @@ import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 import CatCreateForm from './category-form';
 import CategoryItem from './category-item';
-import {catCreate, catUpdate, catDestroy} from '../action/category-action'
+import {catCreate, catUpdate, catDestroy} from '../action/category-action';
+
  const Dashboard = props => {
 
     return(
       <Fragment>
         <h1>Dashboard</h1>
-        <CatCreateForm onComplete={props.catCreate}/>
-        <ol>
+        <CatCreateForm onComplete={props.catCreate} buttonText='submit'/>
+        <ul>
       {props.category.map(category => (
         <CategoryItem category={category} key={category.id} onComplete={props.catUpdate} onDestroy={props.catDestroy}/>
       ))}
-    </ol>
+    </ul>
       </Fragment>
       );
 }

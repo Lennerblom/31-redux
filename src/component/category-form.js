@@ -45,13 +45,13 @@ export default class CatCreateForm extends Component {
   this.setState(changedBit);
   }
 
-  buttonText = () => {
-    if(this.state.view === 'normal') {
-        return 'Submit';
-      } else {
-          return 'Edit';
-      }
-    }
+  // buttonText = () => {
+  //   if(this.state.view === 'normal') {
+  //       return 'Submit';
+  //     } else {
+  //         return 'Edit';
+  //     }
+  //   }
 
     category = () => {
         if(this.state.view === 'normal') {
@@ -70,12 +70,12 @@ export default class CatCreateForm extends Component {
           <fieldset>
           <form onSubmit={this.onSubmit} onChange={this.onChange}>
               <label>Name
-              <input name="name" value = {this.state.name}/>
+              <input name="name" placeholder="category name" value = {this.state.name}/>
               </label>
               <label>Budget
               <input name="budget" type="number" value = {this.state.budget}/>
               </label>
-              <button>{this.buttonText()}</button>
+              <button>{this.props.buttonText}</button>
           </form>
           </fieldset>
         </Fragment>

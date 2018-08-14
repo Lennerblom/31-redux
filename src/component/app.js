@@ -1,10 +1,11 @@
 import React, {Component, Fragment} from 'react';
 import {Provider} from 'react-redux';
 import {BrowserRouter, Link, Route} from 'react-router-dom';
-import createAppstore from '../lib/store';
+import createStore from '../lib/store';
 import Dashboard from './dashboard';
 
-const store = createAppstore();
+const store = createStore();
+console.log('state LOG: ', store.getState())
 
 export default class App extends Component {
 
